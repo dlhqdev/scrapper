@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const PYTHON_CMD = process.env.PYTHON_CMD || "python3"; // Use python3 by default
 
 app.get("/fetch-articles", (req, res) => {
-    const process = exec(`${PYTHON_CMD} scraper.py`, { timeout: 30000 }, (error, stdout, stderr) => {
+    const process = exec(`${PYTHON_CMD} scraper.py`, { timeout: 120000 }, (error, stdout, stderr) => {
         if (error) {
             console.error("Exec Error:", error);
             console.error("Stderr:", stderr);
